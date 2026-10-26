@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindora AI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="logo">✦</span> Mindora AI</div>
+    <button class="new-chat" id="newChat">＋ New chat</button>
+    <div class="section-label">YOUR CHATS</div>
+    <div id="chatList" class="chat-list"></div>
+    <div class="sidebar-bottom">✦ &nbsp; Powered by Gemini</div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <button id="menuBtn" class="menu-btn">☰</button>
+      <strong>Mindora AI</strong>
+      <span class="status"><i></i> Gemini AI</span>
+    </header>
+
+    <section id="messages" class="messages">
+      <div class="welcome" id="welcome">
+        <div class="welcome-logo">✦</div>
+        <h1>What can I help with?</h1>
+        <p>Ask questions, learn something new, or build something amazing.</p>
+        <div class="suggestions">
+          <button data-prompt="Explain Python in simple words">Learn Python</button>
+          <button data-prompt="Give me three MCA project ideas">Project ideas</button>
+          <button data-prompt="Write a simple HTML page">Write code</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="composer-wrap">
+      <form id="chatForm" class="composer">
+        <textarea id="prompt" rows="1" placeholder="Message Mindora AI..." required></textarea>
+        <div class="composer-bottom">
+          <span>AI can make mistakes. Verify important information.</span>
+          <button id="sendBtn" type="submit" aria-label="Send message">↑</button>
+        </div>
+      </form>
+      <div class="footer-note">Made with Python, Flask and Gemini API</div>
+    </div>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
